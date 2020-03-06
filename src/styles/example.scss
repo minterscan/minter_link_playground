@@ -1,0 +1,52 @@
+.cp.example {
+  .block {
+    font-size: 1rem;
+    max-width: 20rem;
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    background: #f3f3f3;
+    border: 1px solid #4f2ec2;
+    border-radius: 4px;
+    color: #4f2ec2;
+
+    &.active {
+      background: #4f2ec2;
+      color: #fff;
+    }
+  }
+
+  .product {
+    text-align: center;
+
+    img {
+      width: 4rem;
+    }
+
+    .name {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .button {
+      cursor: pointer;
+      border: 1px solid #4f2ec2;
+      padding: 1rem;
+      background: f3f3f3;
+      color: #4f2ec2;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .error {
+      font-weight: bold;
+      color: rgb(180, 25, 25);
+      padding: .5rem 0;
+    }
+
+    .success {
+      font-weight: bold;
+      color: rgb(55, 190, 22);
+      padding: .5rem 0;
+    }
+  }
+}
