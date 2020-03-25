@@ -3,7 +3,7 @@
     <div class="title">Payment example</div>
     <img :alt="product.name" :src="`${publicPath}/img/${product.icon}.svg`">
     <div class="name">{{ product.name }}</div>
-    <button class="button" @click="paymentRequest(index)">
+    <button class="button" @click="paymentRequest()">
       <template v-if="isInstalled && isUnlocked">
         Pay <b>{{ product.price }} {{ product.coin}}</b> 
       </template>
@@ -46,15 +46,15 @@ export default {
     }
   },
   methods: {
-    paymentRequest (index) {
+    paymentRequest () {
       this.paymentHash = ''
       this.paymentError = false
       this.paymentAccept = false
 
       const data = {
         address: this.paymentAddress,
-        amount: this.products[index].price,
-        coin: this.products[index].coin,
+        amount: this.product.price,
+        coin: this.product.coin,
         payload: this.orderId
       }
 
