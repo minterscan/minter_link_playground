@@ -1,22 +1,60 @@
 <template>
   <div id="app">
-    <img class="logo" :src="`${publicPath}/img/logo.svg`">
-    <example />
+    <Header />
+    <Example />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import Auth from './services/auth'
+import Header from './components/Header.vue'
 import Example from './components/Example.vue'
 
 export default {
   name: 'App',
   components: {
+    Header,
     Example
   },
-  data () {
-    return {
-      publicPath: process.env.NODE_ENV === 'production' ? process.env.BASE_URL : ''
+  computed: {
+    ...mapState(['wallet'])
+  },
+  watch: {
+    wallet: function () {
+      this.authCheck() 
     }
+  },
+  mounted () {
+    this.subscribe()
+    this.authCheck()
+  },
+  methods: {
+    authCheck () {
+      this.$store.commit('isAuthenticated', false)
+
+      if (Auth.get(this.wallet)) {
+        this.$store.commit('isAuthenticated', true)
+      }
+    },
+    subscribe () {
+      this.minterConnect.subscribe('isInstalled', (value) => {
+        this.$store.commit('isInstalled', value)
+      })
+
+      this.minterConnect.subscribe('isUnlocked', (value) => {
+        this.$store.commit('isUnlocked', value)
+        if (!value) this.$store.commit('isAuthenticated', false)
+      })
+
+      this.minterConnect.subscribe('version', (value) => {
+        this.$store.commit('version', value)
+      })
+
+      this.minterConnect.subscribe('wallet', (value) => {
+        this.$store.commit('wallet', value)
+      })
+    },
   }
 }
 </script>

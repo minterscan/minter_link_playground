@@ -1,0 +1,22 @@
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .start,
+  .end {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 3.5rem;
+    margin: 0 1rem 0 0;
+  }
+
+  .error,
+  .username {
+    margin: 0 1rem 0 0;
+  }
+}

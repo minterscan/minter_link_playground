@@ -1,25 +1,40 @@
 .cp.example {
+  padding: 2rem;
+  text-align: left;
+
+  .welcome {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .status {
+    font-size: 1.25rem;
+    margin-bottom: 5rem;
+  }
+
+  .blocks {
+    display: flex;
+    margin: 0 -1rem;
+  }
+
   .block {
+    width: 50%;
+    flex-grow: 1;
     font-size: 1rem;
-    max-width: 20rem;
     padding: 1rem;
-    margin: 0 auto 1rem;
+    margin: 0 1rem 1rem;
     background: #f3f3f3;
-    border: 1px solid #4f2ec2;
-    border-radius: 4px;
-    color: #4f2ec2;
+    border: 1px solid #c9c9c9;
+    text-align: center;
 
     &.active {
       background: #4f2ec2;
       color: #fff;
     }
-  }
 
-  .product {
-    text-align: center;
-
-    img {
-      width: 4rem;
+    .title {
+      font-size: 1.5rem;
+      margin: 0 0 2rem 0;
     }
 
     .name {
@@ -27,14 +42,8 @@
       margin: 0 0 1rem 0;
     }
 
-    .button {
-      cursor: pointer;
-      border: 1px solid #4f2ec2;
-      padding: 1rem;
-      background: f3f3f3;
-      color: #4f2ec2;
-      border-radius: 4px;
-      outline: none;
+    img {
+      width: 4rem;
     }
 
     .error {
@@ -47,6 +56,26 @@
       font-weight: bold;
       color: rgb(55, 190, 22);
       padding: .5rem 0;
+    }
+  }
+
+  .wallet {
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .cp.example {
+    .blocks {
+      display: block;
+    }
+
+    .block {
+      width: auto;
+
+      .name {
+        font-size: .85rem;      
+      }
     }
   }
 }

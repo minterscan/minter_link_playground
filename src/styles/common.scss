@@ -1,0 +1,28 @@
+.button {
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #c9c9c9;
+  padding: .75rem 1.25rem;
+  background: #fff;
+  border-radius: 2px;
+  outline: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease 0s;
+
+  &.active {
+    background: #4f2ec2;
+    border-color: #4f2ec2;
+    color: #fff;
+  }
+
+  &:hover{
+    color: #fff;
+    background: #502ec2;
+    border-color: #502ec2;
+  }
+}
+
+.dashed {
+  font-weight: bold;
+  border-bottom: 1px dashed #000;
+}
