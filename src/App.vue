@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <Example />
+    <Footer />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 import { mapState } from 'vuex'
 import Auth from './services/auth'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 import Example from './components/Example.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     Example
   },
   computed: {

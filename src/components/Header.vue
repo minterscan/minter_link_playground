@@ -1,23 +1,31 @@
 <template>
   <div class="header">
-    <div class="start">
-      <img class="logo" :src="`${publicPath}/img/logo.svg`">
-    </div>
-    <div class="end">
-      <span class="username" v-if="isAuthenticated">
-        Hidden content, visible for logged-in users only
-      </span>
+    <div class="container">
+      <!-- Start -->
+      <div class="start">
+        <img class="logo" :src="`${publicPath}/img/logo.svg`">
+      </div>
 
-      <span class="error" v-if="error">Rejected</span>
+      <!-- End -->
+      <div class="end">
+        <!-- Hidden -->
+        <span class="hidden" v-if="isAuthenticated">
+          🦄 Hidden content, visible for logged-in users only
+        </span>
 
-      <!-- Auth -->
-      <button class="button auth" @click="authRequest()" v-if="!isAuthenticated && wallet" :disabled="loading">
-        Sign In
-      </button>
+        <!-- Sign In Rejected -->
+        <span class="error" v-if="error">Rejected</span>
 
-      <button class="button active auth" @click="signOut()" v-if="isAuthenticated">
-        Sign out
-      </button>
+        <!-- Sign In -->
+        <button class="button auth" @click="authRequest()" v-if="!isAuthenticated && wallet" :disabled="loading">
+          Sign In
+        </button>
+
+        <!-- Sign Out -->
+        <button class="button active auth" @click="signOut()" v-if="isAuthenticated">
+          Sign out
+        </button>
+      </div>
     </div>
   </div>
 </template>

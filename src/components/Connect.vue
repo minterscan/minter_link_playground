@@ -1,26 +1,43 @@
 <template>
   <div class="block">
     <div class="title">Connect example</div>
-    <img alt="Connect" :src="`${publicPath}/img/browser.svg`">
-    <div class="name">
-      <a :href="`https://minterscan.net/address/${wallet}`" target="_blank" v-if="wallet">
-        {{ wallet }}
-      </a>
-      <template v-else>Not connected</template>
-    </div>
-    <button class="button" @click="connectRequest()" :class="wallet ? 'active': ''">
-      <template v-if="isInstalled && isUnlocked">
-        <template v-if="wallet">
-          Connected
-        </template>
-        <template v-else>
-          Connect
-        </template>
-      </template>
+    <img :src="`${publicPath}/img/charge.svg`" v-if="wallet">
+    <img :src="`${publicPath}/img/plug.svg`" v-else >
+
+    <!-- Wallet -->
+    <template v-if="wallet">
+      <div class="name">
+        <div>Wallet connected</div>
+        <a :href="`https://minterscan.net/address/${wallet}`" target="_blank">
+          {{ wallet }}
+        </a>
+      </div>
+    </template>
+
+    <template v-else>
+      <div class="name">
+        Not connected
+      </div>
+
+      <!-- Unlocked -->
+      <button 
+        class="button" 
+        @click="connectRequest()" 
+        :class="wallet ? 'active': ''"
+        v-if="isInstalled && isUnlocked"
+      >  
+        Connect
+      </button>
+
+      <!-- Locked -->
       <template v-else>
         Unlock {{ extensionName }} to connect
-      </template>
-    </button>
+      </template>  
+    </template>
+
+    
+
+    <!-- Error -->
     <p class="error" v-if="connectError">
       Connect was rejected
     </p>
@@ -39,6 +56,11 @@ export default {
   data () {
     return {
       connectError: false
+    }
+  },
+  watch: {
+    wallet () {
+      this.connectError = false
     }
   },
   methods: {

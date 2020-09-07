@@ -1,19 +1,21 @@
 <template>
   <div class="cp example">
-    <!-- Welcome -->
-    <welcome />
-    
-    <!-- Status -->
-    <status />
-    
-    <!-- Requests -->
-    <div class="blocks">
+    <div class="container">
+      <!-- Welcome -->
+      <welcome />
+      
+      <!-- Status -->
+      <status />
+      
+      <!-- Blocks -->
+      <div class="blocks">
 
-      <!-- Connect -->
-      <connect />
+        <!-- Connect -->
+        <connect />
 
-      <!-- Payment -->
-      <payment />
+        <!-- Payment -->
+        <payment />
+      </div>
     </div>
   </div>
 </template>

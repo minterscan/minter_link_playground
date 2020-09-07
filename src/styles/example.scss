@@ -1,5 +1,5 @@
 .cp.example {
-  padding: 2rem;
+  padding: 1rem 2rem;
   text-align: left;
 
   .welcome {
@@ -9,7 +9,7 @@
 
   .status {
     font-size: 1.25rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
 
   .blocks {
@@ -21,10 +21,12 @@
     width: 50%;
     flex-grow: 1;
     font-size: 1rem;
-    padding: 1rem;
+    padding: .5rem;
     margin: 0 1rem 1rem;
-    background: #f3f3f3;
-    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    border: 5px solid #fff;
+    background: #f8b001;
+    box-shadow: 0 0 0 2px #000000;
     text-align: center;
 
     &.active {
@@ -34,7 +36,7 @@
 
     .title {
       font-size: 1.5rem;
-      margin: 0 0 2rem 0;
+      margin: 1rem 0 1.5rem 0;
     }
 
     .name {
@@ -46,14 +48,19 @@
       width: 4rem;
     }
 
+    .button {
+      margin-bottom: .5rem;
+    }
+
+    p {
+      margin-top: .5rem;
+    }
+
     .error {
-      font-weight: bold;
       color: rgb(180, 25, 25);
-      padding: .5rem 0;
     }
 
     .success {
-      font-weight: bold;
       color: rgb(55, 190, 22);
       padding: .5rem 0;
     }
@@ -75,6 +82,16 @@
 
       .name {
         font-size: .85rem;      
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .cp.example {
+    .block {
+      .name {
+        font-size: .75rem;      
       }
     }
   }

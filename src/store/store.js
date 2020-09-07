@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    extensionName: 'MinterLink',
+    extensionName: 'Minter Link',
     extensionUrl: 'https://github.com/minterscan/minter_link',
     isAuthenticated: false,
     isInstalled: false,

@@ -3,14 +3,12 @@
     <div class="title">Payment example</div>
     <img :alt="product.name" :src="`${publicPath}/img/${product.icon}.svg`">
     <div class="name">{{ product.name }}</div>
-    <button class="button" @click="paymentRequest()">
-      <template v-if="isInstalled && isUnlocked">
+    <button class="button" @click="paymentRequest()" v-if="isInstalled && isUnlocked">
         Pay <b>{{ product.price }} {{ product.coin}}</b> 
-      </template>
-      <template v-else>
-        <b>{{ product.price}} {{ product.coin }}</b>. Unlock {{ extensionName }} to pay
-      </template>
     </button>
+    <template v-else>
+      <b>{{ product.price}} {{ product.coin }}</b>. Unlock {{ extensionName }} to pay
+    </template>
     <p class="error" v-if="paymentError">
       Payment was rejected
     </p>
