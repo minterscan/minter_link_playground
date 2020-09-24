@@ -12,6 +12,7 @@ import Auth from './services/auth'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Example from './components/Example.vue'
+import { MinterLinkObservableProps } from 'minter-connect'
 
 export default {
   name: 'App',
@@ -41,20 +42,20 @@ export default {
       }
     },
     subscribe () {
-      this.minterConnect.subscribe('isInstalled', (value) => {
+      this.minterConnect.subscribe(MinterLinkObservableProps.IsInstalled, (value) => {
         this.$store.commit('isInstalled', value)
       })
 
-      this.minterConnect.subscribe('isUnlocked', (value) => {
+      this.minterConnect.subscribe(MinterLinkObservableProps.IsUnlocked, (value) => {
         this.$store.commit('isUnlocked', value)
         if (!value) this.$store.commit('isAuthenticated', false)
       })
 
-      this.minterConnect.subscribe('version', (value) => {
+      this.minterConnect.subscribe(MinterLinkObservableProps.Version, (value) => {
         this.$store.commit('version', value)
       })
 
-      this.minterConnect.subscribe('wallet', (value) => {
+      this.minterConnect.subscribe(MinterLinkObservableProps.Wallet, (value) => {
         this.$store.commit('wallet', value)
       })
     },
