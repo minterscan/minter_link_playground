@@ -9,24 +9,9 @@ Install extension and [play with demo](https://minterscan.github.io/minter_link_
 
 Check `src/components/Example.vue` for working code example.
 
-## Project setup
+## Development
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
 Running at [localhost:8000](http://localhost:8080/)
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
