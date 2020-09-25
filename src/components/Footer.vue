@@ -3,8 +3,7 @@
     <div class="container">
       <!-- Start -->
       <div class="start">
-        <span>Powered by <a href="https://minter.org/" target="_blank">Minter</a>.</span>&nbsp;
-        <span>Made by <a href="https://minterscan.net" target="_blank">Minterscan</a> &copy; {{ year }}</span>
+        <span><a href="https://github.com/minterscan/minter_link_playground" target="_blank">Source Code</a></span>&nbsp;
       </div>
     </div>
   </div>
