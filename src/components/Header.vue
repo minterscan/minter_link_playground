@@ -54,12 +54,10 @@ export default {
       this.loading = true
 
       this.minterConnect.signRequest('Hello Minter')
-        .then((message) => {
-          const { personalMessage, signature } = message
-
+        .then((signature) => {
           this.loading = false
 
-          if (Auth.verifySignature(this.wallet, personalMessage, signature)) {
+          if (Auth.verifySignature(this.wallet, signature)) {
             Auth.set(this.wallet, true)
             this.$store.commit('isAuthenticated', true)
           }
